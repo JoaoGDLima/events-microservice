@@ -1,0 +1,11 @@
+<h3>Check-in do evento:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/subscriptions/subscriptions/checkin" method="POST">
+            <label for="name" >CPF do participante: </label>
+                <input type="text" name="user" class="form-control" required>
+                <input type="hidden" name="event" value="{{event}}"> 
+            <button type="submit" class="btn btn-success mt-2">Registrar</button>
+        </form>
+    </div>
+</div>

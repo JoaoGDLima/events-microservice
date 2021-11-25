@@ -1,0 +1,32 @@
+<h2>Lista de eventos: </h2>
+<hr>
+
+<a href="/events/add"><button class="btn btn-success">Novo evento</button></a>
+
+{{#each events}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{name}}</h4>
+            <small>{{description}}</small><br>
+            <small>Lugares: {{places}}</small><br>
+            <small>Data: {{date}}</small>
+
+            <form action ="/events/events/delete" method="POST">
+                <input type="hidden" name="id" value="{{id}}"> 
+                <button type="submit" class="btn btn-danger mt-2">Deletar evento</button>
+            </form>
+
+            <form action ="/subscriptions/checkin" method="GET">
+                <input type="hidden" name="event" value="{{id}}"> 
+                <button type="submit" class="btn btn-primary mt-2">Check-in</button>
+            </form>
+
+            <form action ="/subscriptions/" method="GET">
+                <input type="hidden" name="event" value="{{id}}"> 
+                <button type="submit" class="btn btn-success mt-2">Inscrições</button>
+            </form>
+
+        </div>
+    </div>
+{{else}}
+{{/each}}

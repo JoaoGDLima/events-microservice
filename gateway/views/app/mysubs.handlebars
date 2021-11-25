@@ -1,0 +1,29 @@
+<h2>Minhas Inscrições: </h2>
+<hr>
+
+{{#each subs}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{event.name}}</h4>
+            <small>{{event.description}}</small>
+            <small>{{event.date}}</small>
+            <small>{{presence}}</small>
+"
+            {{#if presence}}
+                <form action ="/certifieds/add" method="POST">
+                <input type="hidden" name="subscription" value="{{id}}"> 
+                <input type="hidden" name="eventname" value="{{event.name}}"> 
+                <input type="hidden" name="user" value="{{'João Guilherme Dedonatti de Lima'}}"> 
+                <button type="submit" class="btn btn-success mt-2">Gerar certificado</button>
+                </form>
+            {{else}}
+                <form action ="/subscriptions/subscriptions/delete" method="POST">
+                <input type="hidden" name="id" value="{{id}}"> 
+                <button type="submit" class="btn btn-danger mt-2">Cancelar Inscrição</button>
+                </form>
+            {{/if}}
+
+        </div>
+    </div>
+{{else}}
+{{/each}}

@@ -1,0 +1,14 @@
+<h3>Login:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/users/auth" method="post">
+            <label for="name" >Email: </label>
+                <input type="text" name="email" class="form-control" required>
+            <label for="senha" >Senha: </label>
+                <input type="password" name="password" class="form-control" required>
+            <button type="submit" class="btn btn-success mt-2">Entrar</button>
+        </form>
+        <br>
+        <a href="/users/register">Cadastrar novo usuário</a>
+    </div>
+</div>
